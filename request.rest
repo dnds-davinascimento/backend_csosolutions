@@ -1,0 +1,96 @@
+POST http://localhost:4000/api/services
+Content-Type: application/json
+
+{
+    "name":"novo 65",
+    "description":"alguma coisa 4",
+    "price":"5000",
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+}
+
+###
+GET  http://localhost:4000/api/services
+
+###
+
+GET  http://localhost:4000/api/services/63d3384a26471f595061d15f
+
+###
+
+DELETE   http://localhost:4000/api/services/63d3f124d06dae97477c618d
+
+###
+
+PUT  http://localhost:4000/api/services/63d3384a26471f595061d15f
+Content-Type: application/json
+
+{
+    "name":"5",
+    "description":"alguma  4",
+    "price" : 5,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+}
+
+###
+
+
+
+
+
+//pedido de orçamento
+###
+POST http://localhost:4000/api/orcamento
+Content-Type: application/json
+
+{
+    "title":"quero um site e aplicativo web e mobile",
+    "author":"Davi",
+    "description":"site e aplicativo web e mobile",
+    "budget":5000,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE",
+    "services":[
+        {
+    "name":"Criação de site",
+    "description":"site",
+    "price":1500,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+        },
+        {
+    "name":"Aplicativo web/mobile",
+    "description":"aplicativo web",
+    "price":2500,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+        }
+    ]
+}
+
+###
+GET  http://localhost:4000/api/orcamento
+
+###
+GET  http://localhost:4000/api/orcamento/63d55baf956560e5f69c092f
+
+###
+
+DELETE   http://localhost:4000/api/orcamento/63d55b2f956560e5f69c092b
+
+###
+PUT  http://localhost:4000/api/orcamento/63d576ae564ee0d76db14443
+Content-Type: application/json
+
+{
+    "title":"quero um site ",
+    "author":"Davi",
+    "description":"site sobre minha empresa de motos",
+    "budget":5000,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE",
+    "services":[
+        {
+    "name":"Criação de site",
+    "description":"site",
+    "price":1500,
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+        }
+ 
+    ]
+}
