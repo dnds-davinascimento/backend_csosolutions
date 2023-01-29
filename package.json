@@ -1,10 +1,13 @@
 {
   "name": "backend_csosolutionss",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend_csosolutionss ",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
