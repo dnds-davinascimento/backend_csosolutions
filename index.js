@@ -6,10 +6,10 @@ const app = express()
 app. use(cors())
 app.use(express.json())
 
-const conn = require("./db/conn")
+const conn = require("./src/db/conn")
 
 conn()
-const routes = require("./routes/router")
+const routes = require("./src/routes/router")
 
 app.use("/api", routes);
 // npm start
