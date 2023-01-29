@@ -2,8 +2,8 @@ const mongoose = require("mongoose")
 
 const {Schema}  = mongoose
 
-const serviceSchema = new Schema({
-    nome: {
+const postSchema = new Schema({
+    title: {
         type: String,
         required:true
     },
@@ -11,10 +11,7 @@ const serviceSchema = new Schema({
         type: String,
         required:true
     },
-    price: {
-        type: Number,
-        required:true
-    },
+
     image: {
         type: String,
         required:true
@@ -22,8 +19,11 @@ const serviceSchema = new Schema({
 },
 {timestamps:true}
 );
-const Service = mongoose.model("Service" , serviceSchema)
+
+const Post = mongoose.model("Post" , postSchema)
 module.exports = {
-    Service,
-    serviceSchema,
+    Post,
+    postSchema,
 };
+
+//let user = await User.findOne({email, nome, telefone});

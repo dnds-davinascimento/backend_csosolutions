@@ -2,9 +2,9 @@ POST http://localhost:4000/api/services
 Content-Type: application/json
 
 {
-    "name":"novo 65",
-    "description":"alguma coisa 4",
-    "price":"5000",
+    "name":"Criação de sites ",
+    "description":"Sites parar todos os tipos de empresa",
+    "price":1500,
     "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
 }
 
@@ -17,11 +17,11 @@ GET  http://localhost:4000/api/services/63d3384a26471f595061d15f
 
 ###
 
-DELETE   http://localhost:4000/api/services/63d3f124d06dae97477c618d
+DELETE   http://localhost:4000/api/services/63d6a4abe9af442c534e1c4b
 
 ###
 
-PUT  http://localhost:4000/api/services/63d3384a26471f595061d15f
+PUT  http://localhost:4000/api/services/63d5576a956560e5f69c0922
 Content-Type: application/json
 
 {
@@ -43,22 +43,17 @@ POST http://localhost:4000/api/orcamento
 Content-Type: application/json
 
 {
-    "title":"quero um site e aplicativo web e mobile",
-    "author":"Davi",
-    "description":"site e aplicativo web e mobile",
+    "name":"Davi nascimento",
+    "email":"davinasc98@gmail.com",
+    "telefone":91981521369,
+    "empresa":"cso solutions",
+    "description":"estou presisando de site para minha empresa",
     "budget":5000,
-    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE",
     "services":[
         {
     "name":"Criação de site",
-    "description":"site",
+    "description":"site ",
     "price":1500,
-    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
-        },
-        {
-    "name":"Aplicativo web/mobile",
-    "description":"aplicativo web",
-    "price":2500,
     "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
         }
     ]
@@ -72,7 +67,7 @@ GET  http://localhost:4000/api/orcamento/63d55baf956560e5f69c092f
 
 ###
 
-DELETE   http://localhost:4000/api/orcamento/63d55b2f956560e5f69c092b
+DELETE   http://localhost:4000/api/orcamento/63d576ae564ee0d76db14443
 
 ###
 PUT  http://localhost:4000/api/orcamento/63d576ae564ee0d76db14443
@@ -93,4 +88,37 @@ Content-Type: application/json
         }
  
     ]
+}
+
+
+
+###
+
+###
+POST http://localhost:4000/api/post
+Content-Type: application/json
+
+{
+    "title":"meu primeiro post",
+    "description":"descrição do post",
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
+}
+
+###
+GET  http://localhost:4000/api/post
+
+###
+GET  http://localhost:4000/api/post/63d6b066d3c8fa303c930c76
+
+###
+DELETE   http://localhost:4000/api/post/63d6a530ddbab5e13992a99d
+
+###
+PUT  http://localhost:4000/api/post/63d6b066d3c8fa303c930c76
+Content-Type: application/json
+
+{
+    "title":"meu segundo post",
+    "description":"descrição do post 2",
+    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
 }

@@ -6,11 +6,19 @@ const {serviceSchema} = require("./Service")
 
 const orcamentoSchema = new Schema({
 
-    title:{
+    name:{
         type:String,
         required:true,
     },
-    author:{
+    email:{
+        type:String,
+        required:true,
+    },
+    telefone:{
+        type:Number,
+        required:true,
+    },
+    empresa:{
         type:String,
         required:true,
     },
@@ -22,10 +30,7 @@ const orcamentoSchema = new Schema({
         type:Number,
         required:true,
     },
-    image:{
-        type:String,
-        required:true,
-    },
+
     services:{
         type:[serviceSchema],
         

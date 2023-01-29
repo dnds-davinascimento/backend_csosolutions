@@ -1,16 +1,23 @@
 const {Service: ServiceModel} = require("../models/Service")
 
+
 const serviceControllers= {
     create: async (req, res) =>{
         try {
 
         const service = {
-            name : req.body.name,
+            nome : req.body.name,
             description:req.body.description,
             price:req.body.price,
             image:req.body.image,
         }
-        const response = await ServiceModel.create(service)
+
+        let response = await ServiceModel.findOne({nome, description, price, image});
+
+        if (!response){
+            response = await ServiceModel.create(service)
+        }
+        
 
         res.status(201).json({response, msg: "serviço criado com sucesso"})
 

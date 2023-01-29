@@ -2,7 +2,7 @@ const OrcamentoModel = require("../models/Orcamento")
 
 const checkorcamentoBudget = (budget, services)=>{
     const priceSum = services.reduce((sum, service) => sum + service.price, 0)
-   console.log(priceSum, budget)
+  
     if(priceSum > budget){
         return false
     }
@@ -14,13 +14,14 @@ const orcamentoControllers = {
     create: async (req , res) =>{
         try {
             const orcamento = {
-                title:req.body.title,
-                author:req.body.author,
+                name:req.body.name,
+                email:req.body.email,
+                telefone:req.body.telefone,
+                empresa:req.body.empresa,
                 description:req.body.description,
                 budget:req.body.budget,
-                image:req.body.image,
+                
                 services:req.body.services,
-
             }
             if (orcamento.services && !checkorcamentoBudget(orcamento.budget, orcamento.services)){
                 res.status(406).json({msg: "O seu orçamento e insuficiente."})

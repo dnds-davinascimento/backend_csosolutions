@@ -10,4 +10,7 @@ const orcamentoRouter = require("./orcamento")
 
 router.use("/", orcamentoRouter)
 
+const postRouter = require("./post")
+router.use("/",postRouter)
+
 module.exports = router
