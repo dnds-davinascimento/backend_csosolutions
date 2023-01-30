@@ -1,4 +1,5 @@
 const router = require("express").Router()
+const upload = require("../../config/Multer");
 // Services router
 const servicesRouter = require("./services")
 
@@ -11,6 +12,9 @@ const orcamentoRouter = require("./orcamento")
 router.use("/", orcamentoRouter)
 
 const postRouter = require("./post")
-router.use("/",postRouter)
+router.use("/",upload.single("file"),postRouter)
+
+const pictureRouter = require("./picture")
+router.use("/",upload.single("file"),pictureRouter)
 
 module.exports = router
