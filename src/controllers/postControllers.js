@@ -4,9 +4,9 @@ const {Post} = require("../models/Post")
 const postControllers= {
     create: async (req, res) =>{
         try {
-            const { title} = req.body;
+            const { title,  description} = req.body;
             
-            const { description} = req.body;
+            
 
             const file = req.file;
             const post = new Post({

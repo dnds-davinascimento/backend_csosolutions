@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const {Schema}  = mongoose
 
-const postSchema = new Schema({
+const postSchema = new Schema( {
     title: {
         type: String,
         required:true
@@ -17,10 +17,20 @@ const postSchema = new Schema({
         required:true
     },
 },
-{timestamps:true}
+
+{timestamps:true},
+
 );
 
-const Post = mongoose.model("Post" , postSchema)
+
+// Alteração:
+
+const Post = mongoose.model("Post", postSchema.set('toJSON', { virtuals: true }));
+
+postSchema.virtual('src_url').get(function() {
+    return `http://https://backend-csosolutions.vercel.app/file/${this.src}`; // adicionado o return para retornar o valor da função 
+});
+
 module.exports = {
     Post,
     postSchema,

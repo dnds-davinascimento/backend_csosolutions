@@ -48,15 +48,8 @@ Content-Type: application/json
     "telefone":91981521369,
     "empresa":"cso solutions",
     "description":"estou presisando de site para minha empresa",
-    "budget":5000,
-    "services":[
-        {
-    "name":"Criação de site",
-    "description":"site ",
-    "price":1500,
-    "image":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOK&psig=AOvVaw0pCuyHpq443c4Hg-WKPYEE&ust=1674868645401000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKjqkYfK5vwCFQAAAAAdAAAAABAE"
-        }
-    ]
+    "budget":5000
+ 
 }
 
 ###
@@ -108,10 +101,10 @@ Content-Type: application/json
 GET  http://localhost:4000/api/post
 
 ###
-GET  http://localhost:4000/api/post/63d82756433f1abb30be561d
+GET  http://localhost:4000/api/post/63d82a2fb3e012d04775c708
 
 ###
-DELETE   http://localhost:4000/api/post/63d82756433f1abb30be561d
+DELETE   http://localhost:4000/api/post/63d82a2fb3e012d04775c708
 
 ###
 PUT  http://localhost:4000/api/post/63d82a2fb3e012d04775c708

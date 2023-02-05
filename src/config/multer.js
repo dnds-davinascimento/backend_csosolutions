@@ -3,11 +3,13 @@ const multer = require("multer");
 const path = require("path");
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/");
-  },
+  destination: path.resolve(__dirname,'..','..','uploads/'),
   filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
+    const ext = path.extname(file.originalname)
+    const name = path.basename(file.originalname ,ext)
+    const fileName = `${name}-${Date.now()}${ext}`;
+    cb(null, fileName);
+    
   },
 });
 
