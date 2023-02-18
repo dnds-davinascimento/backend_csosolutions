@@ -18,7 +18,7 @@ const postControllers= {
                 console.log(response)
             } catch (error) {
                 console.log(error)
-                res.status(500).json({msg:'A conteceu um erro no cervidor tente mais tarde'})
+                res.status(500).json(error)
             }
 
     },
