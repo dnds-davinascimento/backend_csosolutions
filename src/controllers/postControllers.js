@@ -24,7 +24,7 @@ const postControllers= {
     },
     getAll: async (req , res) =>{
         try {
-            const post = await Post.find()
+            const post = await PostModel.find()
             res.json(post)
         } catch (error) {
             console.log(error)
@@ -33,7 +33,7 @@ const postControllers= {
     get: async (req, res)=>{
         try {
             const id = req.params.id
-            const post = await Post.findById(id)
+            const post = await PostModel.findById(id)
             if(!post){
                 res.status(404).json({msg:"Post não encontrado"})
                 return;
@@ -48,14 +48,14 @@ const postControllers= {
         try {
             
             const id = req.params.id
-            const post = await Post.findById(id)
+            const post = await PostModel.findById(id)
             if(!post){
                 res.status(404).json({msg:"Post não encontrado"})
                 return;
             }
             fs.unlinkSync(post.src);
             await post.remove();
-            const deletedPost = await Post.findByIdAndDelete(id)
+            const deletedPost = await PostModel.findByIdAndDelete(id)
             res.status(200).json({ deletedPost , msg:"Post excluido com sucesso"})
 
 
@@ -72,7 +72,7 @@ const postControllers= {
             const { description} = req.body;
 
             const file = req.file;
-            const post = new Post({
+            const post = new PostModel({
               title,
               description,
               src: file.path,
@@ -81,7 +81,7 @@ const postControllers= {
 
             
             
-        const updatePost = await Post.findByIdAndUpdate(id , post)
+        const updatePost = await PostModel.findByIdAndUpdate(id , post)
 
         if(!updatePost){
             res.status(404).json({msg:"post não encontrado"})
