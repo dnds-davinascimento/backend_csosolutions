@@ -23,7 +23,7 @@ const postSchema = new Schema( {
 });
     postSchema.virtual('foto_url').get(function(){
     return `http://backend-csosolutions.vercel.app/files/${this.foto}`
-    
+    //backend-csosolutions.vercel.app
 })
 
 const Post= mongoose.model("Post" ,postSchema)
