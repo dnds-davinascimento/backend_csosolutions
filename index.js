@@ -6,12 +6,12 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use('/files', express.static(path.resolve (__dirname,'uploads')))
+app.use('/files', express.static(path.resolve (__dirname,'src','uploads')))
 
-const conn = require("./db/conn")
+const conn = require("./src/db/conn")
 
 conn()
-const routes = require("./routes/router")
+const routes = require("./src/routes/router")
 
 app.use("/api", routes);
 // npm start
