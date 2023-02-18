@@ -17,9 +17,9 @@ const postControllers= {
                 res.status(201).json({response, msg: "post Criado com Sucesso"})
                 console.log(response)
             } catch (error) {
-                console.log(error)
-                res.json(error)
-            }
+                console.log(error);
+                res.status(500).json({ error: "Erro interno do servidor" });
+              }
 
     },
     getAll: async (req , res) =>{
