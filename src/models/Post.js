@@ -12,25 +12,21 @@ const postSchema = new Schema( {
         required:true
     },
 
-    src: {
-        type: String,
-        required:true
+    foto:{
+        type:String,
+        required:true,
     },
+
+
 },
-
-{timestamps:true},
-
-);
-
-
-// Alteração:
-
-const Post = mongoose.model("Post", postSchema.set('toJSON', { virtuals: true }));
-
-postSchema.virtual('src_url').get(function() {
-    return `http://https://backend-csosolutions.vercel.app/file/${this.src}`; // adicionado o return para retornar o valor da função 
+{ toJSON:{ virtuals: true,},
 });
+    postSchema.virtual('foto_url').get(function(){
+    return `http://backend-csosolutions.vercel.app/files/${this.foto}`
+    
+})
 
+const Post= mongoose.model("Post" ,postSchema)
 module.exports = {
     Post,
     postSchema,

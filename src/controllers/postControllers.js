@@ -1,28 +1,25 @@
 const fs = require("fs")
+const {Post: PostModel} = require("../models/Post")
 
-const {Post} = require("../models/Post")
 const postControllers= {
     create: async (req, res) =>{
-        try {
+      
             const { title,  description} = req.body;
+            const {filename} = req.file;
             
-            
-
-            const file = req.file;
-            const post = new Post({
-              title,
-              description,
-              src: file.path,
-            });
-
-
-            await post.save();
-
-        res.status(201).json({post, msg: "Post criado com sucesso"})
-
-        } catch (error) {
-            console.log(error)
-        }
+            const post = new PostModel({
+                title,
+                description,
+                foto :filename,
+            })
+            try {
+                const response = await PostModel.create(post)
+                res.status(201).json({response, msg: "post Criado com Sucesso"})
+                console.log(response)
+            } catch (error) {
+                console.log(error)
+                res.status(500).json({msg:'A conteceu um erro no cervidor tente mais tarde'})
+            }
 
     },
     getAll: async (req , res) =>{

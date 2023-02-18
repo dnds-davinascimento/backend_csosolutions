@@ -1,11 +1,12 @@
 const express = require('express')
 const cors = require("cors")
+const path = require('path');
 require('dotenv').config()
 const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use("/file", express.static("uploads"))
+app.use('/files', express.static(path.resolve (__dirname,'uploads')))
 
 const conn = require("./src/db/conn")
 
